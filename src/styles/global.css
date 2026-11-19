@@ -1,15 +1,16 @@
-/* Same system as mountm.tech, with an evergreen accent so the two brands read as siblings. */
+/* Same system as mountm.tech, colored from the Telluride Tech logo (blue peak, slate mountain). */
 :root {
-  --ink: #131C19;
-  --text: #2A3430;
-  --muted: #5B6863;
-  --line: #E1E8E4;
-  --bg: #F6F8F7;
+  --ink: #15191F;
+  --text: #2B3038;
+  --muted: #5E6570;
+  --line: #E2E6EC;
+  --bg: #F6F7F9;
   --card: #FFFFFF;
-  --green: #1F5E4A;
-  --green-2: #2E8063;
+  --green: #0E5FA8;
+  --green-2: #1A7FD0;
   --mm-blue: #1E4FA8;
-  --grad: linear-gradient(135deg, #1F5E4A 0%, #3FA37C 100%);
+  --grad: linear-gradient(135deg, #0E5FA8 0%, #1A7FD0 100%);
+  --grad-text: linear-gradient(135deg, #0E5FA8 0%, #1A7FD0 100%);
   --mm-grad: linear-gradient(135deg, #1E4FA8 0%, #4FA3E0 100%);
   --notice-bg: #FFF4DF;
   --notice-fg: #7A4B00;
@@ -19,8 +20,8 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --ink: #EEF4F1; --text: #D2DBD7; --muted: #97A49F; --line: #24302C;
-    --bg: #0D1412; --card: #141D1A; --green: #6FCFA6; --green-2: #4FB88E; --mm-blue: #6FA8F0;
+    --ink: #F0F3F7; --text: #D3D8E0; --muted: #98A0AC; --line: #262C36;
+    --bg: #0E1116; --card: #161A21; --green: #6FB4F2; --green-2: #4FA3E8; --grad-text: linear-gradient(135deg, #4FA3E8 0%, #9CD0FF 100%); --mm-blue: #6FA8F0;
     --notice-bg: #33260F; --notice-fg: #F3C877;
     color-scheme: dark;
   }
@@ -43,7 +44,7 @@ p { margin: 0 0 1em; }
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
 .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .78rem; font-weight: 700; color: var(--green-2); margin-bottom: .8em; }
 .lead { font-size: 1.2rem; color: var(--muted); max-width: 38em; }
-.grad-text { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.grad-text { background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
 /* notice bar */
 .notice { background: var(--notice-bg); color: var(--notice-fg); font-size: .92rem; font-weight: 600; text-align: center; padding: 10px 0; }
@@ -51,13 +52,15 @@ p { margin: 0 0 1em; }
 
 /* header */
 .site-header { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
-.site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 16px; }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 84px; gap: 16px; }
 .logo { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 800; font-size: 1.15rem; letter-spacing: -0.01em; }
 .logo:hover { text-decoration: none; }
-.logo img { width: 34px; height: 34px; }
+.logo img { height: 66px; width: auto; }
+@media (max-width: 480px) { .logo img { height: 56px; } }
+@media (prefers-color-scheme: dark) { .logo img { filter: brightness(1.6) saturate(1.1); } }
 .btn { display: inline-flex; align-items: center; gap: .5em; padding: .8em 1.4em; border-radius: 999px; font-weight: 700; font-size: .98rem; border: 1px solid transparent; transition: transform .15s, box-shadow .15s; }
 .btn:hover { text-decoration: none; transform: translateY(-1px); }
-.btn-primary { background: var(--grad); color: #fff; box-shadow: 0 6px 20px rgba(31,94,74,.25); }
+.btn-primary { background: var(--grad); color: #fff; box-shadow: 0 6px 20px rgba(14,95,168,.25); }
 .btn-mm { background: var(--mm-grad); color: #fff; box-shadow: 0 6px 20px rgba(30,79,168,.25); }
 .btn-ghost { border-color: var(--line); color: var(--ink); background: var(--card); }
 .site-header .btn { padding: .55em 1.1em; font-size: .9rem; }

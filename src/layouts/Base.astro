@@ -12,7 +12,8 @@ const fullTitle = title ? `${title} · Telluride Tech` : 'Telluride Tech · Loca
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{fullTitle}</title>
   <meta name="description" content={description} />
-  <link rel="icon" href={u("/favicon.svg")} type="image/svg+xml" />
+  <link rel="icon" href={u("/favicon.png")} type="image/png" />
+  <link rel="apple-touch-icon" href={u("/apple-touch-icon.png")} />
   <meta property="og:title" content={fullTitle} />
   <meta property="og:description" content={description} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,7 +24,7 @@ const fullTitle = title ? `${title} · Telluride Tech` : 'Telluride Tech · Loca
   <div class="notice"><div class="wrap">Telluride Tech is not taking on new work at this time. Looking for software or a website? <a href="https://mountm.tech">Visit Mount M Technologies</a>.</div></div>
   <header class="site-header">
     <div class="wrap">
-      <a class="logo" href={u("/")}><img src={u("/favicon.svg")} alt="" width="34" height="34" />Telluride Tech</a>
+      <a class="logo" href={u("/")}><img src={u("/brand/telluridetech-logo.png")} alt="Telluride Tech" width="600" height="381" /></a>
       <a class="btn btn-mm" href="https://mountm.tech"><span class="hide-sm">Software? </span>Mount M →</a>
     </div>
   </header>
