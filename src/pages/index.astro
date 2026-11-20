@@ -1,0 +1,82 @@
+---
+import Base from '../layouts/Base.astro';
+const services = [
+  ['Computers', 'Setup, cleanup, upgrades and virus removal for Mac and Windows.'],
+  ['Networks and Wi-Fi', 'Routers, mesh Wi-Fi and dead spots in mountain homes and small offices.'],
+  ['Printers and devices', 'Printers, scanners, smart TVs and the other gear that refuses to connect.'],
+  ['Backups', 'A backup plan that runs on its own, so a dead drive is not a disaster.'],
+];
+---
+<Base>
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Telluride Tech · Telluride, Colorado</div>
+      <div class="status" role="status">Not taking on new work at this time</div>
+      <h1>Local IT help, <span class="grad-text">right here in Telluride.</span></h1>
+      <p class="lead">Telluride Tech is now focused only on hands-on IT support for homes and businesses in the Telluride area. I'm not taking on new clients right now. Existing clients can reach me the usual way.</p>
+      <div class="actions">
+        <a class="btn btn-mm" href="https://mountm.tech">Software and websites: Mount M</a>
+        <a class="btn btn-ghost" href="#contact">Existing clients</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:16px">
+    <div class="wrap">
+      <div class="handoff">
+        <div>
+          <h2>Looking for an app, website or custom software?</h2>
+          <p>All software development has moved to Mount M Technologies, my development company. That includes the work Telluride Tech used to do:</p>
+          <ul>
+            <li>Mobile apps and web apps</li>
+            <li>WordPress, Shopify and custom websites</li>
+            <li>Custom software and integrations</li>
+            <li>Hosting and site care</li>
+          </ul>
+          <a class="btn btn-mm" href="https://mountm.tech">Visit mountm.tech</a>
+        </div>
+        <div class="side">
+          <strong>Mount M Technologies</strong>
+          <span>Apps and websites, built in Telluride. Same developer, 30+ years of experience.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What Telluride Tech covers</h2>
+        <p>Local, in-person IT work in Telluride. Currently available to existing clients only.</p>
+      </div>
+      <div class="services">
+        {services.map(([t, d]) => <div class="service"><h3>{t}</h3><p>{d}</p></div>)}
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <blockquote class="testimonial">
+        <p>“Michael is a very knowledgeable, detail oriented IT professional. He brings expertise, enthusiasm and results to every project he undertakes.”</p>
+        <cite>Mary Dawn DeBriae, Owner, Alpen Schatz</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head"><h2>Get in touch</h2></div>
+      <div class="contact">
+        <div class="service">
+          <h3>Existing Telluride Tech clients</h3>
+          <p>Email <a href="mailto:michael@telluridetech.com">michael@telluridetech.com</a> and I'll get back to you.</p>
+        </div>
+        <div class="service">
+          <h3>New projects and software</h3>
+          <p>Start at <a href="https://mountm.tech">mountm.tech</a> or email <a href="mailto:mountmtech@gmail.com">mountmtech@gmail.com</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
