@@ -1,5 +1,6 @@
 ---
 import { u } from '../lib/url';
+import { umami } from '../../analytics.config.mjs';
 import '../styles/global.css';
 interface Props { title?: string; description?: string; }
 const { title, description = 'Telluride Tech provides local IT support in Telluride, Colorado. Not taking on new clients at this time. Software and app development is handled by Mount M Technologies.' } = Astro.props;
@@ -19,20 +20,21 @@ const fullTitle = title ? `${title} · Telluride Tech` : 'Telluride Tech · Loca
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  {umami.websiteId && <script is:inline defer src={umami.src} data-website-id={umami.websiteId} data-domains={umami.domains}></script>}
 </head>
 <body>
-  <div class="notice"><div class="wrap">Telluride Tech is not taking on new work at this time. Looking for software or a website? <a href="https://mountm.tech">Visit Mount M Technologies</a>.</div></div>
+  <div class="notice"><div class="wrap">Telluride Tech is not taking on new work at this time. Looking for software or a website? <a href="https://mountm.tech" data-umami-event="Mount M click">Visit Mount M Technologies</a>.</div></div>
   <header class="site-header">
     <div class="wrap">
       <a class="logo" href={u("/")}><img src={u("/brand/telluridetech-logo.png")} alt="Telluride Tech" width="600" height="381" /></a>
-      <a class="btn btn-mm" href="https://mountm.tech"><span class="hide-sm">Software? </span>Mount M →</a>
+      <a class="btn btn-mm" href="https://mountm.tech" data-umami-event="Mount M click"><span class="hide-sm">Software? </span>Mount M →</a>
     </div>
   </header>
   <main><slot /></main>
   <footer class="site-footer">
     <div class="wrap">
-      <div>Telluride Tech · Telluride, Colorado · <a href="mailto:michael@telluridetech.com">michael@telluridetech.com</a></div>
-      <div>Software development by <a href="https://mountm.tech">Mount M Technologies, LLC</a> · © {new Date().getFullYear()}</div>
+      <div>Telluride Tech · Telluride, Colorado · <a href="mailto:michael@telluridetech.com" data-umami-event="Email click">michael@telluridetech.com</a></div>
+      <div>Software development by <a href="https://mountm.tech" data-umami-event="Mount M click">Mount M Technologies, LLC</a> · © {new Date().getFullYear()}</div>
     </div>
   </footer>
 </body>
