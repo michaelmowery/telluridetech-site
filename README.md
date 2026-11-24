@@ -22,9 +22,9 @@ npm run build    # outputs dist/
 
 ## Analytics (Umami)
 
-Off until a website ID is set. Either put it in `analytics.config.mjs`, or add repo variables under Settings > Secrets and variables > Actions > Variables:
+Configured in `analytics.config.mjs` (Umami website "Telluride Tech"). To override without a code change, add repo variables under Settings > Secrets and variables > Actions > Variables:
 
 - `UMAMI_WEBSITE_ID`: the website ID from Umami (Settings > Websites > Edit).
-- `UMAMI_SRC` (optional): script URL. Defaults to Umami Cloud, `https://cloud.umami.is/script.js`; use `https://<your-umami-host>/script.js` if self-hosted.
+- `UMAMI_SRC` (optional): script URL. Defaults to the self-hosted instance, `https://analytics.meander.me/script.js`.
 
 Every page gets the script, including the 404. The old-URL redirect stubs in `public/` get it at build time (`integrations/umami-redirects.mjs`) so those hits are counted before redirecting. Only `telluridetech.com` visits are counted. Clicks on Mount M links and email links are tracked as `Mount M click` and `Email click` events.
