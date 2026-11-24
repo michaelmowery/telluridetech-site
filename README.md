@@ -19,3 +19,12 @@ npm run build    # outputs dist/
 ## Old WordPress URLs
 
 `public/<old-path>/index.html` files redirect old links. Development pages (`/Software-Development/`, `/service/wordpress/`, `/10-step-plan/`) go to https://mountm.tech/services/. Everything else goes to the home page.
+
+## Analytics (Umami)
+
+Off until a website ID is set. Either put it in `analytics.config.mjs`, or add repo variables under Settings > Secrets and variables > Actions > Variables:
+
+- `UMAMI_WEBSITE_ID`: the website ID from Umami (Settings > Websites > Edit).
+- `UMAMI_SRC` (optional): script URL. Defaults to Umami Cloud, `https://cloud.umami.is/script.js`; use `https://<your-umami-host>/script.js` if self-hosted.
+
+Every page gets the script, including the 404. The old-URL redirect stubs in `public/` get it at build time (`integrations/umami-redirects.mjs`) so those hits are counted before redirecting. Only `telluridetech.com` visits are counted. Clicks on Mount M links and email links are tracked as `Mount M click` and `Email click` events.
